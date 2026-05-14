@@ -3,6 +3,7 @@ name: ヘルスチェック
 on:
   schedule:
     - cron: "15 * * * *"
+  workflow_dispatch:
 
 env:
   SITE_URL: "https://rinto-sugawara.github.io/hello_devops/"
