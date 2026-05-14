@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: リポジトリをチェックアウト
+        uses: actions/checkout@v6.0.2
+
+      - name: Node.js をセットアップ
+        uses: actions/setup-node@v4
+
+      - name: 依存パッケージをインストール
+        run: npm ci
+
+      - name: テストを実行
+        run: npm test
